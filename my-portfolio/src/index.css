@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #1F2937;
+  color: #E5E7EB;
+  font-family: 'Inter', sans-serif;
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px) saturate(150%);
+  background-color: rgba(31, 41, 55, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero.css */
+
+.fluid-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, #374151, #1F2937, #3B82F6);
+  animation: waveAnimation 15s ease-in-out infinite;
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px) saturate(150%);
+  background-color: rgba(31, 41, 55, 0.5); /* Gris foncé transparent */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
