@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import { I18nextProvider } from 'react-i18next';
 import i18n from 'i18next';
-import frTranslation from './locales/fr/translation.json';
+import frTranslation from './components/locales/fr/translation.json';
 
 i18n.init({
   resources: {
