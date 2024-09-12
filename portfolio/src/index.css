@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .text-center {
-    font-size: 2rem; /* Adjust font size as needed */
+    font-size: 2rem;
   }

@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import useMousePosition from '../useMousePosition';
 
@@ -153,8 +152,8 @@ const BackgroundParticle = () => {
   };
 
   return (
-    <div className="relative w-full h-screen bg-black" ref={canvasContainerRef}>
-      <canvas ref={canvasRef} />
+    <div className="relative min-h-screen w-full bg-black" ref={canvasContainerRef}>
+      <canvas ref={canvasRef} className="pointer-events-none" />
     </div>
   );
 };

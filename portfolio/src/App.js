@@ -8,6 +8,7 @@ const App = () => {
   const [isLanding, setIsLanding] = useState(() => {
     return localStorage.getItem('showLanding') !== 'false';
   });
+  const [navbarVisible, setNavbarVisible] = useState(false);
 
   useEffect(() => {
     if (isLanding) {
@@ -17,6 +18,12 @@ const App = () => {
       }, 5000);
 
       return () => clearTimeout(timer);
+    } else {
+      const navbarTimer = setTimeout(() => {
+        setNavbarVisible(true);
+      }, 500);
+
+      return () => clearTimeout(navbarTimer);
     }
   }, [isLanding]);
 
@@ -30,7 +37,12 @@ const App = () => {
           <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
             <AnimatedText text="Welcome on my amazing portfolio !"/>
           </div>
-          <Navbar className="absolute inset-x-0 bottom-0 z-20" />
+          {/* Navbar avec animation de slide vers le bas */}
+          <Navbar
+            className={`absolute inset-x-0 bottom-0 z-20 transition-transform duration-1000 ${
+              navbarVisible ? 'translate-y-0' : '-translate-y-full'
+            }`}
+          />
         </div>
       )}
     </div>
