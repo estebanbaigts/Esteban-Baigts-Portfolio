@@ -3,12 +3,15 @@ import BackgroundParticle from './components/background/BackgroundParticle';
 import Navbar from './components/Navbar';
 import Landing from './components/LandingPage';
 import AnimatedText from './components/LetterPullUp';
+import Card from './components/Card'; // Importer le composant Card
+import { motion } from 'framer-motion';
 
 const App = () => {
   const [isLanding, setIsLanding] = useState(() => {
     return localStorage.getItem('showLanding') !== 'false';
   });
   const [navbarVisible, setNavbarVisible] = useState(false);
+  const [cardsVisible, setCardsVisible] = useState(false);
 
   useEffect(() => {
     if (isLanding) {
@@ -19,11 +22,19 @@ const App = () => {
 
       return () => clearTimeout(timer);
     } else {
+      // Timing adjustments
       const navbarTimer = setTimeout(() => {
         setNavbarVisible(true);
-      }, 500);
+      }, 5500);
 
-      return () => clearTimeout(navbarTimer);
+      const cardsTimer = setTimeout(() => {
+        setCardsVisible(true);
+      }, 5500);
+
+      return () => {
+        clearTimeout(navbarTimer);
+        clearTimeout(cardsTimer);
+      };
     }
   }, [isLanding]);
 
@@ -34,15 +45,43 @@ const App = () => {
       ) : (
         <div className="fixed inset-0 z-0 flex flex-col items-center justify-center">
           <BackgroundParticle />
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
-            <AnimatedText text="Welcome on my amazing portfolio !"/>
+          <div className="absolute inset-0 z-10 flex flex-col text-white items-center justify-center">
+            <AnimatedText text="Welcome on my amazing portfolio !" />
+            <motion.div
+              className="mt-8 flex flex-wrap justify-center"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: cardsVisible ? 1 : 0, scale: cardsVisible ? 1 : 0.5 }}
+              transition={{
+                duration: 0.5,
+                ease: [0, 0.71, 0.2, 1.01],
+                scale: {
+                  type: "spring",
+                  damping: 10,
+                  stiffness: 100,
+                  restDelta: 0.001
+                }
+              }}
+            >
+              <Card />
+            </motion.div>
           </div>
-          {/* Navbar avec animation de slide vers le bas */}
-          <Navbar
-            className={`absolute inset-x-0 bottom-0 z-20 transition-transform duration-1000 ${
-              navbarVisible ? 'translate-y-0' : '-translate-y-full'
-            }`}
-          />
+          <motion.div
+            className="absolute inset-x-0 bottom-0 z-20"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: navbarVisible ? 1 : 0, scale: navbarVisible ? 1 : 0.5 }}
+            transition={{
+              duration: 0.5,
+              ease: [0, 0.71, 0.2, 1.01],
+              scale: {
+                type: "spring",
+                damping: 10,
+                stiffness: 100,
+                restDelta: 0.001
+              }
+            }}
+          >
+            <Navbar />
+          </motion.div>
         </div>
       )}
     </div>

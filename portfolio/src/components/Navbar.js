@@ -13,8 +13,8 @@ const Button = ({ label }) => {
 
 const Navbar = () => {
     return (
-        <footer className="w-max max-w-lg bg-transparent text-white shadow-md fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 border border-green-600 rounded-md">
-            <nav className="flex justify-around items-center p-2 h-12 space-x-1">
+        <footer className="w-full md:w-max max-w-lg bg-transparent text-white shadow-md fixed top-4 left-1/2 transform -translate-x-1/2 z-50  rounded-md">
+            <nav className="flex flex-col md:flex-row justify-around items-center p-2 h-auto md:h-12 space-y-2 md:space-y-0 md:space-x-1">
                 <Button label="Projects" />
                 <Button label="About" />
                 <Button label="Contact" />
