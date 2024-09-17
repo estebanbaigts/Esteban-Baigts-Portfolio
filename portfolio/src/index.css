@@ -5,3 +5,50 @@
 .text-center {
     font-size: 2rem;
   }
+
+.bg-glass {
+  background: rgba(255, 255, 255, 0.2); /* Couleur de fond avec opacité pour le glassmorphism */
+  backdrop-filter: blur(10px); /* Effet de flou */
+  border-radius: 10px; /* Coins arrondis pour l'effet de verre */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure blanche avec opacité */
+}
+
+.bg-noise {
+  /* background-image: url('path/to/your/noise-texture.png'); Remplacez par le chemin vers votre image de bruit */
+  background-size: cover;
+}
+
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}

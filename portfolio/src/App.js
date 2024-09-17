@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import BackgroundParticle from './components/background/BackgroundParticle';
 import Navbar from './components/Navbar';
-import Landing from './components/LandingPage';
+import Landing from './components/background/LandingPage';
 import AnimatedText from './components/LetterPullUp';
-import Card from './components/Card'; // Importer le composant Card
+import Card1 from './components/pages/Card1';
+import Card2 from './components/pages/Card2';
+import Card3 from './components/pages/Card3';
+import Card4 from './components/pages/Card4';
+import Card5 from './components/pages/Card5';
 import { motion } from 'framer-motion';
 
 const App = () => {
@@ -62,7 +66,11 @@ const App = () => {
                 }
               }}
             >
-              <Card />
+              <Card1/>
+              <Card2/>
+              <Card3/>
+              <Card4/>
+              <Card5/>
             </motion.div>
           </div>
           <motion.div
