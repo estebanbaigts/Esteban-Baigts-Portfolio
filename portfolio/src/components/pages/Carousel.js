@@ -3,20 +3,16 @@ import { motion } from 'framer-motion';
 import Draggable from 'react-draggable';
 
 import { ReactComponent as CLogo } from './c.svg';
-import { ReactComponent as CPlusPlusLogo } from './c++.svg';
 import { ReactComponent as CanvaLogo } from './canva.svg';
 import { ReactComponent as ChartJSLogo } from './chartjs.svg';
-import { ReactComponent as CSharpLogo } from './csharp.svg';
 import { ReactComponent as NodeJSLogo } from './nodejs.svg';
 import { ReactComponent as PlaywrightLogo } from './playwright.svg';
 import { ReactComponent as ReactLogo } from './react.svg';
 
 const techLogos = [
     { name: 'C', logo: <CLogo /> },
-    { name: 'C++', logo: <CPlusPlusLogo /> },
     { name: 'Canva', logo: <CanvaLogo /> },
     { name: 'ChartJS', logo: <ChartJSLogo /> },
-    { name: 'C#', logo: <CSharpLogo /> },
     { name: 'Node.js', logo: <NodeJSLogo /> },
     { name: 'Playwright', logo: <PlaywrightLogo /> },
     { name: 'React', logo: <ReactLogo /> },

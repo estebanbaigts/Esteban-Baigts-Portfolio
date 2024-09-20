@@ -12,7 +12,7 @@ const BackgroundParticle = () => {
   const dpr = typeof window !== 'undefined' ? window.devicePixelRatio : 1;
   const quantity = 100;
   const staticity = 50;
-  const ease = 50;
+  const ease = 10; // Ajoute cette ligne
 
   useEffect(() => {
     if (canvasRef.current) {

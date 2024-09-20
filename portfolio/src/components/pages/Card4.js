@@ -93,61 +93,8 @@ const Card = () => {
         />
       )}
 
-      <div className="absolute bottom-[25%] left-5 text-white">
+      <div className="absolute bottom-[5%] left-5 text-white">
         <p>Current time (Europe): {formatTime(time)}</p>
-      </div>
-
-      <div className="absolute bottom-[10%] left-5 text-white flex space-x-4">
-        <Button
-          label="View CV"
-          href="./cv.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        />
-        <Button
-          label="GitHub"
-          href="https://github.com/estebanbaigts"
-          target="_blank"
-          rel="noopener noreferrer"
-        />
-      </div>
-
-      <div className="absolute top-5 right-5 text-white">
-        <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
-            placeholder="Your Name"
-            className="p-2 rounded"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            placeholder="Your Email"
-            className="p-2 rounded"
-            required
-          />
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleInputChange}
-            placeholder="Your Message"
-            className="p-2 rounded"
-            rows="4"
-            required
-          />
-          <button
-            type="submit"
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Send Message
-          </button>
-        </form>
       </div>
     </motion.div>
   );

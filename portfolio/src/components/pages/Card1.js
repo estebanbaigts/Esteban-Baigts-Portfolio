@@ -66,24 +66,32 @@ const Card = () => {
                 />
             )}
             <div className="relative w-full h-full flex flex-col items-center justify-center text-center">
-                <div className="relative w-32 h-32 rounded-full border-4 border-slate-50 transition-transform duration-500">
+                <div className=" relative w-32 h-32 rounded-full border-4 border-slate-50 transition-transform duration-500">
                     <img
                         src={myPhoto}
                         alt="Esteban Baigts"
-                        className="w-full h-full object-cover rounded-full"
+                        className=" bottom-[50%] w-full h-full object-cover rounded-full"
                     />
                 </div>
-                <div className="flex flex-col items-center justify-center mt-4 transition-all duration-500">
-                    <span className="text-2xl text-white font-semibold">Esteban Baigts</span>
-                    <p className="text-2xl text-white mt-2">Software Dev</p>
-                    <div className="mt-6">
-                        <Button
-                            label="LinkedIn"
-                            href="https://www.linkedin.com/in/esteban-baigts-70b423232/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        />
-                    </div>
+                <div className="absolute bottom-[10%] left-[3%] text-white flex space-x-4">
+                    <Button
+                        label="View CV"
+                        href="./cv.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    />
+                    <Button
+                        label="GitHub"
+                        href="https://github.com/estebanbaigts"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    />
+                    <Button
+                        label="LinkedIn"
+                        href="https://www.linkedin.com/in/esteban-baigts-70b423232/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    />
                 </div>
             </div>
         </motion.div>
