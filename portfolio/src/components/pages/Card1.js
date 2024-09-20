@@ -66,14 +66,14 @@ const Card = () => {
                 />
             )}
             <div className="relative w-full h-full flex flex-col items-center justify-center text-center">
-                <div className=" relative w-32 h-32 rounded-full border-4 border-slate-50 transition-transform duration-500">
+                <div className=" relative bottom-[10%] w-32 h-32 rounded-full border-4 border-slate-50 transition-transform duration-500">
                     <img
                         src={myPhoto}
                         alt="Esteban Baigts"
-                        className=" bottom-[50%] w-full h-full object-cover rounded-full"
+                        className="w-full h-full object-cover rounded-full"
                     />
                 </div>
-                <div className="absolute bottom-[10%] left-[3%] text-white flex space-x-4">
+                <div className="absolute bottom-[10%] left-[2%] text-white flex space-x-4">
                     <Button
                         label="View CV"
                         href="./cv.pdf"

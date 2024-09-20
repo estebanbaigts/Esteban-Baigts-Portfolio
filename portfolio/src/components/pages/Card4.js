@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import InfiniteMovingCards from './InfiniteMovingCards'; // Import du composant InfiniteMovingCards
 
 const Button = ({ label, onClick, href, target, rel }) => {
   return href ? (
@@ -26,11 +27,6 @@ const Card = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const [time, setTime] = useState(new Date());
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -40,33 +36,28 @@ const Card = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const formatTime = (date) => {
-    return date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-  };
-
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setMousePosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Replace this with actual email sending logic
-    alert(`Message sent from ${formData.name} (${formData.email}): ${formData.message}`);
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    });
-  };
+  const TESTIMONIALS = [
+    {
+      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      name: "John Doe",
+      title: "CEO, Example Corp",
+    },
+    {
+      quote: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      name: "Jane Smith",
+      title: "CTO, Tech Solutions",
+    },
+    {
+      quote: "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+      name: "Jim Beam",
+      title: "Engineer, Beam Inc.",
+    },
+  ];
 
   return (
     <motion.div
@@ -92,9 +83,9 @@ const Card = () => {
           transition={{ duration: 0.3 }}
         />
       )}
-
-      <div className="absolute bottom-[5%] left-5 text-white">
-        <p>Current time (Europe): {formatTime(time)}</p>
+      {/* Intégration des cartes défilantes à l'infini */}
+      <div className="relative z-10">
+        <InfiniteMovingCards items={TESTIMONIALS} direction="right" speed="slow" />
       </div>
     </motion.div>
   );

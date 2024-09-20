@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import Carousel from './Carousel';
+import Carousel from './CarouselTech';
 
 const Card = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
