@@ -3,6 +3,7 @@ import Card1 from './Card1';
 import Card2 from './Card2';
 import Card3 from './Card3';
 import Card4 from './Card4';
+import Card5 from './Card5';
 import Draggable from 'react-draggable';
 
 const CardGrid = () => {
@@ -11,9 +12,10 @@ const CardGrid = () => {
     { id: 2, component: <Card2 />, position: { x: 350, y: 0 } },
     { id: 3, component: <Card3 />, position: { x: 700, y: 0 } },
     { id: 4, component: <Card4 />, position: { x: 0, y: 350 } },
+    { id: 5, component: <Card5 />, position: { x: 0, y: 350 } },
   ]);
 
-  const gridSize = 350; // taille des cartes
+  const gridSize = 350;
 
   const handleStop = (e, data, cardId) => {
     const newPosition = {

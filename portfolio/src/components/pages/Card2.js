@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import Draggable from 'react-draggable';
 
 const Card = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -12,15 +11,11 @@ const Card = () => {
   };
 
   return (
-    <Draggable>
       <motion.div
-        className="absolute top-[10%] right-20 w-[670px] h-[350px] rounded-xl border border-white/30 p-4 overflow-hidden m-4 cursor-pointer"
+        className="absolute top-[10%] right-20 w-[800px] h-[350px] rounded-xl border border-white/30 p-4 overflow-hidden m-4 cursor-pointer"
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
       >
         {isHovered && (
           <motion.div
@@ -39,8 +34,24 @@ const Card = () => {
             transition={{ duration: 0.3 }}
           />
         )}
+        <div className="relative z-10">
+          <h2 className="text-2xl font-bold mb-4">À propos de moi</h2>
+          <p className="text-lg">
+            Je suis Esteban Baigts, un jeune développeur passionné par l'innovation technologique.
+            Actuellement en Master of Science en Business & Technology à Epitech Digital School,
+            j'ai travaillé sur plusieurs projets, notamment dans le développement logiciel et la data.
+            Je suis à la recherche d'une alternance de janvier 2025 à septembre 2027 dans les domaines
+            de la data ou du développement logiciel.
+          </p>
+          <p className="text-lg mt-4">
+            Compétences : C, C++, JavaScript, Node.js, React.js, Docker, Postgres, Python, HTML, CSS
+          </p>
+          <p className="text-lg mt-4">
+            Expériences récentes : Développeur logiciel chez Omind Neurotechnologies (création d'un
+            luxmètre et de jeux pour un prototype de suivi oculaire), Fullstack Developer chez Masae Analytics.
+          </p>
+        </div>
       </motion.div>
-    </Draggable>
   );
 };
 

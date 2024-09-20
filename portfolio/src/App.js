@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import BackgroundParticle from './components/background/BackgroundParticle';
-import Navbar from './components/Navbar';
 import Landing from './components/background/LandingPage';
 import AnimatedText from './components/LetterPullUp';
 import Card1 from './components/pages/Card1';
@@ -26,7 +25,6 @@ const App = () => {
 
       return () => clearTimeout(timer);
     } else {
-      // Timing adjustments
       const navbarTimer = setTimeout(() => {
         setNavbarVisible(true);
       }, 5500);
@@ -66,11 +64,11 @@ const App = () => {
                 }
               }}
             >
-              <Card1/>
-              <Card2/>
-              <Card3/>
-              <Card4/>
-              <Card5/>
+              <Card1 />
+              <Card2 />
+              <Card3 />
+              <Card4 />
+              <Card5 />
             </motion.div>
           </div>
           <motion.div
@@ -88,7 +86,6 @@ const App = () => {
               }
             }}
           >
-            <Navbar />
           </motion.div>
         </div>
       )}

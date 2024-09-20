@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Draggable from 'react-draggable';
 
-// Import des logos SVG depuis le dossier 'assets/svg'
 import { ReactComponent as CLogo } from './c.svg';
 import { ReactComponent as CPlusPlusLogo } from './c++.svg';
 import { ReactComponent as CanvaLogo } from './canva.svg';
