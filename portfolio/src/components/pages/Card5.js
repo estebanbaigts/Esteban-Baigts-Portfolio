@@ -13,7 +13,7 @@ const Card = () => {
 
     return (
         <motion.div
-            className="absolute bottom-[10%] right-20 w-[800px] h-[350px] rounded-xl border border-white/30 p-4 overflow-hidden m-4 cursor-pointer"
+            className="absolute bottom-[10%] left-[48%] w-[800px] h-[350px] rounded-xl border border-white/30 p-4 overflow-hidden m-4 cursor-pointer"
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}

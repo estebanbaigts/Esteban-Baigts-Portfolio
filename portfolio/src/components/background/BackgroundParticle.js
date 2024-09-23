@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import useMousePosition from '../useMousePosition';
+import useMousePosition from './useMousePosition';
 
 const BackgroundParticle = () => {
   const canvasRef = useRef(null);

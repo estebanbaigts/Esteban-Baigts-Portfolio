@@ -9,7 +9,7 @@ const Button = ({ label, onClick, href, target, rel }) => {
                 href={href}
                 target={target}
                 rel={rel}
-                className="relative w-24 h-10 text-white bg-transparent border-none rounded-md text-sm font-bold flex items-center justify-center overflow-hidden cursor-pointer group"
+                className="relative w-20 h-8 sm:w-24 sm:h-10 text-white bg-transparent border-none rounded-md text-xs sm:text-sm font-bold flex items-center justify-center overflow-hidden cursor-pointer group"
             >
                 <span className="absolute inset-0 flex items-center justify-center z-10">{label}</span>
                 <span className="absolute w-32 h-32 bg-green-200 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-bottom" />
@@ -21,7 +21,7 @@ const Button = ({ label, onClick, href, target, rel }) => {
 
     return (
         <button
-            className="relative w-24 h-10 text-white bg-transparent border-none rounded-md text-sm font-bold flex items-center justify-center overflow-hidden cursor-pointer group"
+            className="relative w-20 h-8 sm:w-24 sm:h-10 text-white bg-transparent border-none rounded-md text-xs sm:text-sm font-bold flex items-center justify-center overflow-hidden cursor-pointer group"
             onClick={onClick}
         >
             <span className="absolute inset-0 flex items-center justify-center z-10">{label}</span>
@@ -43,7 +43,7 @@ const Card = () => {
 
     return (
         <motion.div
-            className="absolute top-[10%] left-20 w-[365px] h-[350px] rounded-xl border border-white/30 p-4 overflow-hidden m-4 cursor-pointer"
+            className="absolute top-[10%] left-10 sm:left-20 w-[90vw] max-w-[365px] h-[300px] sm:h-[350px] rounded-xl border border-white/30 p-4 overflow-hidden m-4 cursor-pointer"
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -66,14 +66,14 @@ const Card = () => {
                 />
             )}
             <div className="relative w-full h-full flex flex-col items-center justify-center text-center">
-                <div className=" relative bottom-[10%] w-32 h-32 rounded-full border-4 border-slate-50 transition-transform duration-500">
+                <div className="relative bottom-[10%] w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-slate-50 transition-transform duration-500">
                     <img
                         src={myPhoto}
                         alt="Esteban Baigts"
                         className="w-full h-full object-cover rounded-full"
                     />
                 </div>
-                <div className="absolute bottom-[10%] left-[2%] text-white flex space-x-4">
+                <div className="absolute bottom-[5%] sm:bottom-[10%] left-[2%] text-white flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                     <Button
                         label="View CV"
                         href="./cv.pdf"
